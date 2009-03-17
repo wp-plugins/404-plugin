@@ -16,7 +16,7 @@ Installing this plugin is beneficial for SEO (Search Engine Optimization) becaus
 
 Estimated install time: 1-5 minutes
 
-1. Upload the 404-plugin.php to the /wp-content/plugins/ folder on your site.
+1. Upload the '404-plugin' folder to the /wp-content/plugins/ folder on your site.
 2. In WP-Admin, you should see '404 Plugin' listed as an inactive plugin. Click the link to activate it. 
 3. Click the 'Editor' link under 'Appearance' in your WP-Admin sidebar.
 4. Edit the '404 Template (404.php)'.

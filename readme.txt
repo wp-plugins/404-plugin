@@ -20,7 +20,14 @@ Estimated  time: 1-5 minutes
 2. In WP-Admin, you should see '404 Plugin' listed as an inactive plugin. Click the link to activate it. 
 3. Click the 'Editor' link under 'Appearance' in your WP-Admin sidebar.
 4. Edit the '404 Template (404.php)'.
-5. Add '<?Print404Message();?>' to your template, in the place where you want the list of suggestions to appear.
+5. Add '<?custom404_print404message();?>' to your template, in the place where you want the list of suggestions to appear.
+
+6. What if my theme has no 404.php?
+	In your theme's folder (wp-content/themes/yourthemename/) add a file called '404.php' containing this:
+<?php get_header(); ?>
+  <?custom404_print404message();?>
+<?php get_footer(); ?>
+*Be sure there are no spaces around this code in the file.*
 
 That's it! You should be all set to go!
 

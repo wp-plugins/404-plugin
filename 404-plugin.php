@@ -4,7 +4,7 @@
 
 Plugin Name: 404 Plugin
 
-Version: 1.0
+Version: 1.1
 
 Plugin URI: http://www.404plugin.com
 

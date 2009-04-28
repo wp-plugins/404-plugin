@@ -1,7 +1,7 @@
 <?
 /*
 Plugin Name: 404 SEO Plugin
-Version: 1.1
+Version: 1.2
 Plugin URI: http://www.404plugin.com
 Description: Give yourself an SEO boost! Replaces 404 error with suggestions of related pages on the site. After installing, <a href='theme-editor.php'>go here</a>, and add &lt;?custom404_print404message();?&gt; to your 404 Template where you want the suggestions to appear.
 Author: 404 Plugin

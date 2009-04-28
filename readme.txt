@@ -1,4 +1,4 @@
-=== 404 Plugin ===
+=== 404 SEO Plugin ===
 Contributors: 404plugin
 Donate link: http://www.404plugin.com/
 Tags: 404
@@ -8,7 +8,7 @@ Stable tag: trunk
 
 == Description ==
 
-This simple plugin will give you a customized, smart 'Page Not Found(404)' error message. It will automatically display links to relevant pages on your site, based on the words in the URL that was not found.
+Give yourself an SEO boost! This simple plugin will give you a customized, smart 'Page Not Found(404)' error message. It will automatically display links to relevant pages on your site, based on the words in the URL that was not found.
 
 Installing this plugin is beneficial for SEO (Search Engine Optimization) because it will make your site appear to have relevant pages even for those URLs that you actually don't have. This can increase your search engine ranking.
 

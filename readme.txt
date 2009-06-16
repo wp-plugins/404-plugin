@@ -1,7 +1,7 @@
 === 404 SEO Plugin ===
 Contributors: 404plugin
 Donate link: http://www.404plugin.com/
-Tags: 404
+Tags: 404, SEO
 Requires at least: 2.7
 Tested up to: 2.7
 Stable tag: trunk

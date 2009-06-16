@@ -1,7 +1,8 @@
 === 404 SEO Plugin ===
 Contributors: 404plugin
 Donate link: http://www.404plugin.com/
-Tags: 404, SEO
+Tags: 404, SEO, Search Optimization, Google, search engine optimization, plugin, page missing
+
 Requires at least: 2.7
 Tested up to: 2.7
 Stable tag: trunk

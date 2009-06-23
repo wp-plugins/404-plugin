@@ -1,7 +1,7 @@
 <?
 /*
 Plugin Name: 404 SEO Plugin
-Version: 1.4
+Version: 1.5
 Plugin URI: http://www.404plugin.com
 Description: Give yourself an SEO boost! Replaces 404 error with suggestions of related pages on the site. After installing, <a href='theme-editor.php'>go here</a>, and add &lt;?custom404_print404message();?&gt; to your 404 Template where you want the suggestions to appear.
 Author: 404 Plugin
@@ -27,7 +27,7 @@ function custom404_print404message()
     $custom404_googleresults = str_replace("onmousedown=\"return clk(this.href,'','','res','$count','')\"", $custom404_nofollow, $custom404_googleresults);
     $custom404_googleresults = str_replace("onmousedown=\"return clk(this.href,'','','clnk','$count','')\"", $custom404_nofollow, $custom404_googleresults);
   }
-  if (strpos($custom404_googleresults, 'did not match any documents.'))
+  if (strpos($custom404_googleresults, 'did not match any documents.') || strpos($custom404_googleresults, $_SERVER[REDIRECT_URL] ))
   {
       $custom404_headline = 'No local results found. From the web:';
       $custom404_googleresults = custom404_gettextbetweentags('<div id=res class=med>', '<div style="height:1px;line-height:0">', custom404_enginesearch('google', 'www'));
@@ -93,7 +93,7 @@ function custom404_print404message()
       }
   }
   $custom404_formattedquerystring = $_SERVER[REDIRECT_QUERY_STRING] ? "?$_SERVER[REDIRECT_QUERY_STRING]":"";
-  print "<iframe src='http://www.404plugin.com/track.php' scrolling=no height=1 width=1 marginheight=0 marginwitdh=0 frameborder=0></iframe>
+  print "<iframe name='404pluginV15' src='http://www.404plugin.com/track.php' scrolling=no height=1 width=1 marginheight=0 marginwitdh=0 frameborder=0></iframe>
    <table border=0 width=100%>
    <h3>Suggestions</h3>
    <!--Google results-->
@@ -162,11 +162,12 @@ function custom404_enginesearch($engine='google', $www=0)
   $header  = array();
   $referers = array('google' => 'Referer: http://www.google.com', 'yahoo' => 'http://www.yahoo.com');
   array_push ($header, $referers[$engine]);
-  if($www)$custom404_server[0] = '';
+  if($www)$custom404_server[0] = str_replace('+','+-', $custom404_server[0]);
   $UserAgents = array("Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.1) Gecko/20061204 Firefox/2.0.0.1",
                       "Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1)");
   $URLs = array ('google' => "http://www.google.com/search?hl=en&q=$custom404_missingpagestr$custom404_server[0]&btnG=Google+Search&aq=f&oq=",
                  'yahoo' => "http://search.yahoo.com/search?p=$custom404_missingpagestr$custom404_server[0]&fr=yfp-t-501&toggle=1&cop=mss&ei=UTF-8");
+
   $ch = curl_init();
   curl_setopt($ch, CURLOPT_USERAGENT, $UserAgents[array_rand($UserAgents)]);
   curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);

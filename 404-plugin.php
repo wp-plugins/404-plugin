@@ -192,7 +192,7 @@ function custom404_getgoogleresults($term, $domain=0)
                 if (@$sibling->getAttribute("class") == "s")
                 {
                   $shorturl = str_replace('http://', '', $url);  
-                  $description = custom404_gettextbetweentags("STARTHERE", $shorturl, "$STARTHERE$sibling->nodeValue");              
+                  $description = custom404_gettextbetweentags("STARTHERE", $shorturl, "STARTHERE$sibling->nodeValue");              
                 }  
             }
 			$nofollow = $position == 1 ? '' : 'rel=nofollow';
